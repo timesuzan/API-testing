@@ -1,0 +1,8 @@
+-
+  feature: 查询账户列表
+  story: 接口
+  title: 查询所有账户
+  request:
+    method: get
+    url: http://3x5m5o-3000.csb.app/customers
+

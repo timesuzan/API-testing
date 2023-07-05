@@ -1,0 +1,7 @@
+-
+  feature: 查找单个账户
+  story: 接口
+  title: 查询单个账户
+  request:
+    method: get
+    url: http://3x5m5o-3000.csb.app/customer
