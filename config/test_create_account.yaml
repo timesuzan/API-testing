@@ -1,0 +1,12 @@
+-
+  feature: 创建账户
+  story: 接口
+  title: 创建账户
+  request:
+    method: post
+    url: http://3x5m5o-3000.csb.app/customer
+    Authentication:
+        auth_key: !!str 123 #!!str强制转换为string类型
+    body:
+        name: Paulo Oliveira
+        type: Company
