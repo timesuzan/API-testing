@@ -1,0 +1,13 @@
+-
+    feature: 修改单个账户
+    story: 接口
+    title: 修改单个账户
+    request:
+      method: put
+      url: http://3x5m5o-3000.csb.app/customer/69
+      Authentication:
+          auth_key: !!str 123 #!!str强制转换为string类型
+      body:
+          name: Paulo Oliveira
+          type: Company
+          admin: "anonymous"
