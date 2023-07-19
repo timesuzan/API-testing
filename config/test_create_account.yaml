@@ -10,3 +10,9 @@
     body:
         name: Paulo Oliveira
         type: Company
+    body_add_gender:
+      name: Paulo Oliveira
+      type: Company
+      gender: male
+    body_without_type:
+      name: Paulo Oliveira
