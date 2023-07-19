@@ -14,7 +14,6 @@ class TestFindAccunt:
     def test_find_account(self, findaccount):
         method = findaccount["request"]["method"]
         id = read_yaml().get("account_id")
-        # url = findaccount["request"]["url"] + "?id=" + str(id)
         url = findaccount["request"]["url"]
         res = RequestUtil().send_all_request(method=method, url=url, params={"id": id})
         # print(res.json())

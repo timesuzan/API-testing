@@ -1,0 +1,11 @@
+-
+    feature: 删除单个账户
+    story: 接口
+    title: 删除单个账户
+    request:
+      method: delete
+      url: http://3x5m5o-3000.csb.app/customer/
+      id: 69
+      wrong_id: 3
+      Authentication:
+          auth_key: !!str 123 #!!str强制转换为string类型
