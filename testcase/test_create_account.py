@@ -3,7 +3,7 @@ from commons.yaml_util import *
 from commons.request_util import RequestUtil
 import jsonpath
 
-class TestAccountList:
+class TestCreateAccount:
 
     @pytest.mark.run(order=2)
     @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_create_account.yaml"))
@@ -14,7 +14,8 @@ class TestAccountList:
         headers = accountinfo["request"]["Authentication"]
         data = accountinfo["request"]["body"]
         res = RequestUtil().send_all_request(method=method, url=url, headers=headers, data=data)
-        #print(res.json())
+        account_id = (jsonpath.jsonpath(res.json(), "$.id")[0])
+        write_yaml({"insert_account_id": account_id})
         assert res.status_code == 201
 
     @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_create_account.yaml"))

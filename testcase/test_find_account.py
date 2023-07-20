@@ -7,7 +7,7 @@ from commons.request_util import RequestUtil
 from commons.yaml_util import *
 
 
-class TestFindAccunt:
+class TestFindAccount:
 
     @pytest.mark.run(order=1)
     @pytest.mark.parametrize("findaccount", read_yaml_testcase("config/test_find_account.yaml"))

@@ -3,8 +3,9 @@ from commons.yaml_util import *
 from commons.request_util import RequestUtil
 import jsonpath
 
-class TestChangeAccunt:
+class TestChangeAccount:
 
+    @pytest.mark.run(order=3)
     @pytest.mark.parametrize("findaccount", read_yaml_testcase("config/test_put_account.yaml"))
     def test_change_account(self,findaccount):
         method = findaccount["request"]["method"]

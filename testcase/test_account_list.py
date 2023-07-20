@@ -14,7 +14,7 @@ class TestAccountList:
         method = accountinfo["request"]["method"]
         url = accountinfo["request"]["url"]
         res = RequestUtil().send_all_request(method=method, url=url)
-        #print(res.json())
+        clear_yaml()
         account_id = (jsonpath.jsonpath(res.json(), "$.data.customers")[0][2].get('id'))
         write_yaml({"account_id": account_id
                     })

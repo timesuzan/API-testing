@@ -3,14 +3,14 @@ from commons.yaml_util import *
 from commons.request_util import RequestUtil
 import jsonpath
 
-class TestAccountList:
+class TestDeleteAccount:
 
-    @pytest.mark.run(order=2)
+    @pytest.mark.run(order=4)
     @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_delete_account.yaml"))
     def test_delete_account(self, accountinfo):
         #print(accountinfo)
         method = accountinfo["request"]["method"]
-        id = accountinfo["request"]["id"]
+        id = read_yaml().get("insert_account_id")
         url = accountinfo["request"]["url"]+str(id)
         headers = accountinfo["request"]["Authentication"]
         res = RequestUtil().send_all_request(method=method, url=url, headers=headers)
@@ -31,7 +31,7 @@ class TestAccountList:
     def test_delete_account_with_wrong_id(self, accountinfo):
         # print(accountinfo)
         method = accountinfo["request"]["method"]
-        wrong_id = accountinfo["request"]["wrong_id"]
+        wrong_id = 3
         url = accountinfo["request"]["url"]+str(wrong_id)
         headers = accountinfo["request"]["Authentication"]
         res = RequestUtil().send_all_request(method=method, url=url, headers=headers)
