@@ -10,7 +10,7 @@ from commons.yaml_util import *
 class TestFindAccunt:
 
     @pytest.mark.run(order=1)
-    @pytest.mark.parametrize("findaccount", read_yaml_testcase("../config/test_find_account.yaml"))
+    @pytest.mark.parametrize("findaccount", read_yaml_testcase("config/test_find_account.yaml"))
     def test_find_account(self, findaccount):
         method = findaccount["request"]["method"]
         id = read_yaml().get("account_id")
@@ -23,7 +23,7 @@ class TestFindAccunt:
     @pytest.mark.parametrize("findaccount", read_yaml_testcase("../config/test_find_account.yaml"))
     def test_find_error_id_account(self, findaccount):
         method = findaccount["request"]["method"]
-        error_id = 100
+        error_id = -1
         url = findaccount["request"]["url"]
         res = RequestUtil().send_all_request(method=method, url=url, params={"id": error_id})
         assert res.status_code == 404
