@@ -8,7 +8,7 @@ import jsonpath
 class TestAccountList:
 
     @pytest.mark.run(order=0)
-    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("../config/test_account_list.yaml"))
+    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_account_list.yaml"))
     def test_account_list(self, accountinfo):
         #print(accountinfo)
         method = accountinfo["request"]["method"]

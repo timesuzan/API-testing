@@ -6,7 +6,7 @@ import jsonpath
 class TestAccountList:
 
     @pytest.mark.run(order=2)
-    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("../config/test_delete_account.yaml"))
+    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_delete_account.yaml"))
     def test_delete_account(self, accountinfo):
         #print(accountinfo)
         method = accountinfo["request"]["method"]
@@ -17,7 +17,7 @@ class TestAccountList:
         #print(res.json())
         assert res.status_code == 200
 
-    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("../config/test_delete_account.yaml"))
+    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_delete_account.yaml"))
     def test_delete_account_without_id(self, accountinfo):
         # print(accountinfo)
         method = accountinfo["request"]["method"]
@@ -27,7 +27,7 @@ class TestAccountList:
         # print(res.json())
         assert res.status_code == 401
 
-    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("../config/test_delete_account.yaml"))
+    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_delete_account.yaml"))
     def test_delete_account_with_wrong_id(self, accountinfo):
         # print(accountinfo)
         method = accountinfo["request"]["method"]

@@ -6,7 +6,7 @@ import jsonpath
 class TestAccountList:
 
     @pytest.mark.run(order=2)
-    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("../config/test_create_account.yaml"))
+    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_create_account.yaml"))
     def test_create_account(self, accountinfo):
         #print(accountinfo)
         method = accountinfo["request"]["method"]
@@ -17,7 +17,7 @@ class TestAccountList:
         #print(res.json())
         assert res.status_code == 201
 
-    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("../config/test_create_account.yaml"))
+    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_create_account.yaml"))
     def test_create_account_without_body(self, accountinfo):
         # print(accountinfo)
         method = accountinfo["request"]["method"]
@@ -27,7 +27,7 @@ class TestAccountList:
         # print(res.json())
         assert res.status_code == 400
 
-    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("../config/test_create_account.yaml"))
+    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_create_account.yaml"))
     def test_create_account_without_headers(self, accountinfo):
         # print(accountinfo)
         method = accountinfo["request"]["method"]
@@ -37,7 +37,7 @@ class TestAccountList:
         # print(res.json())
         assert res.status_code == 401
 
-    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("../config/test_create_account.yaml"))
+    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_create_account.yaml"))
     def test_create_account_body_with_gender(self, accountinfo):
         # print(accountinfo)
         method = accountinfo["request"]["method"]
@@ -48,7 +48,7 @@ class TestAccountList:
         # print(res.json())
         assert res.status_code == 201
 
-    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("../config/test_create_account.yaml"))
+    @pytest.mark.parametrize("accountinfo", read_yaml_testcase("config/test_create_account.yaml"))
     def test_create_account_body_without_type(self, accountinfo):
         # print(accountinfo)
         method = accountinfo["request"]["method"]
