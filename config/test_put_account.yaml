@@ -4,7 +4,7 @@
     title: 修改单个账户
     request:
       method: put
-      url: http://3x5m5o-3000.csb.app/customer/69
+      url: http://3x5m5o-3000.csb.app/customer
       Authentication:
           auth_key: !!str 123 #!!str强制转换为string类型
       body:
